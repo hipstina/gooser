@@ -2,12 +2,9 @@
   align-items: center;
   display: flex;
   margin: 0 auto;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
   width: 500px;
   height: 200px;
-  box-shadow: 1 1 3px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
+  margin-top: 50px;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
@@ -23,4 +20,9 @@
 
 .timeline {
   font-family: 'Roboto', sans-serif;
+}
+
+.post-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

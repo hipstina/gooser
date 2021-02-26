@@ -38,11 +38,12 @@
 }
 
 body {
-  background-color: #e6edf6;
-  /* background-color: red; */
+  /* background-color: #e6edf6; */
+  background-color: #800000;
   margin: 0 auto;
   padding-top: 50px;
-  overflow: hidden;
+  /* overflow: hidden; */
+  height: 100vh;
 }
 
 .nav {
