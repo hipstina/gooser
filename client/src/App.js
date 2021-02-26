@@ -13,14 +13,7 @@ class App extends Component {
     super()
 
     this.state = {
-      blogPosts: [],
-      submitted: false,
-      author: '',
-      description: ''
-      // newPost: {
-      //   author: this.state.author,
-      //   description: this.state.description
-      // }
+      blogPosts: []
     }
   }
 
@@ -32,56 +25,21 @@ class App extends Component {
   getAllPosts = async () => {
     try {
       const res = await axios.get('http://localhost:3001/api/allposts')
-      console.log(res)
+      // console.log(res)
+      this.setState({
+        blogPosts: res.data.posts
+      })
     } catch (error) {
       throw error
     }
-  }
-
-  publishNewPost = async () => {
-    try {
-      const res = await axios.post(
-        'http://localhost:3001/api/addpost',
-        // this.state.newPost
-        { author: this.state.author, description: this.state.description }
-      )
-      console.log(res)
-      return res.data
-    } catch (error) {
-      throw error
-    }
-  }
-
-  ///we stopped here
-  addingNewPost = (event) => {
-    event.preventDefault()
-    console.log('state:', this.state)
-    console.log('event.target.name:', event.target.name)
-    console.log('event.target.value:', event.target.value)
-    const userName = event.target.name
-    const userPost = event.target.value
-
-    this.setState({
-      newPost: { author: userName, description: userPost },
-      submitted: true
-    })
-
-    this.publishNewPost()
-    console.log('PUBLISHING')
   }
 
   render() {
-    const newPost = this.state.newPost
+    const posts = this.state.blogPosts
 
     return (
       <div className="App">
-        {/* <button
-          type="submit"
-          onClick={this.addingNewPost}
-          className="btn custom-btn"
-        >
-          Publish!
-        </button> */}
+
         <Nav />
         <Switch>
           <Route
@@ -90,15 +48,20 @@ class App extends Component {
             component={(routerProps) => (
               <Form
                 {...routerProps}
-                name={newPost.author}
-                value={newPost.description}
-                onClick={this.addingNewPost}
+                posts={posts}
+                getAllPosts={this.getAllPosts}
+                // author={this.state.author}
+                // description={this.state.description}
+                // onSubmit={this.handleSubmit}
+                // onChange={this.handleChange}
               />
             )}
           />
           <Route
             path="/allposts"
-            component={(routerProps) => <Dashboard {...routerProps} />}
+            component={(routerProps) => (
+              <Dashboard {...routerProps} posts={posts} />
+            )}
           />
         </Switch>
       </div>
