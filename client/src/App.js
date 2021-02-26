@@ -25,7 +25,6 @@ class App extends Component {
             component={(routerProps) => <Form {...routerProps} />}
           />
           <Route
-            exact
             path="/posts"
             component={(routerProps) => <Dashboard {...routerProps} />}
           />
