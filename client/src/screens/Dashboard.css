@@ -32,7 +32,7 @@
   display: grid;
   grid-template-columns: 1fr;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 150px auto;
 }
 
 .post-details {
@@ -64,6 +64,7 @@
   width: 90%;
   margin: 15px 15px 15px 0;
   max-height: 420px;
+  -webkit-overflow-scrolling: auto;
   overflow-y: scroll;
   font-size: 20px;
   line-height: 1.6;

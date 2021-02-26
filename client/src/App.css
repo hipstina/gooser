@@ -7,21 +7,32 @@ body {
 }
 
 .nav {
-  background-color: #e9ecf2;
+  background-color: #e6edf6;
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
+  margin:0;
   position: fixed;
   top: 0;
   width: 100vw;
   height: 50px;
-  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1); */
+}
+.nav1{
+  margin: 0 0 0 100px;
+
+}
+
+.nav2{
+  margin: 0 100px 0 0;
+
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: rgba(31, 38, 135, 1);
   font-family: 'Roboto', sans-serif;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0 auto; */
 }
