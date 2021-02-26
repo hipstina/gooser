@@ -3,9 +3,12 @@ import axios from 'axios'
 
 export default class ClearPost extends Component {
   render() {
+    const { postId, onClick } = this.props
     return (
       <div>
-        <button onClick={this.deletePost}>Clear</button>
+        <button postId={postId} onClick={onClick}>
+          Clear
+        </button>
       </div>
     )
   }
