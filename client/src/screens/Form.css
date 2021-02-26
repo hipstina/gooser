@@ -1,14 +1,11 @@
-.form-body {
-  min-width: 300px;
-}
-
 .form-body,
-h1,
-p {
+.form-title,
+.form-p {
   font-family: 'Roboto', sans-serif;
   text-align: center;
   margin-top: 5%;
   color: rgba(68, 70, 179, 1);
+  /* min-width: 700px; */
 }
 
 .form {
@@ -53,5 +50,11 @@ p {
 }
 
 .view-post {
-  margin-top: 15%;
+  margin-top: 20%;
+  color: aliceblue;
+  background: rgba(68, 70, 179, 0.22);
+}
+
+.view-btn {
+  color: rgba(68, 70, 179, 1);
 }
