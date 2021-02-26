@@ -4,11 +4,14 @@ const router = Router()
 
 router.get('/', (req, res) => res.send('This is root!'))
 
-router.post('/allposts', controllers.createPost)
-router.get('/allposts', controllers.findAllPosts)
+router.post('/addpost', controllers.createPost)
 
 router.get('/allposts', controllers.findAllPosts)
 
-router.delete('/allposts/:id' , controllers.deletePost)
+router.delete('/allposts/:id', controllers.deletePost)
+
+router.get('/allposts/:id', controllers.findOnePost)
+
+router.put('/allposts/:id', controllers.updatePost)
 
 module.exports = router
