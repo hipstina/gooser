@@ -49,7 +49,6 @@ export default class Dashboard extends Component {
     const allPosts = this.state.allPosts.reverse()
     return (
       <div>
-        <h1 className="timeline">Dashboard</h1>
         <div className="post-body">
           {allPosts.map((result, index) => (
             <BlogPost
