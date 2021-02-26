@@ -14,6 +14,19 @@ class App extends Component {
     }
   }
 
+  componentDidMount()
+  
+
+
+  ///we stopped here
+  addingNewPost = (event) => {
+    event.preventDefault()
+    this.setState({
+      author: "",
+      description: ""
+    })
+  } 
+
   render() {
     return (
       <div className="App">
