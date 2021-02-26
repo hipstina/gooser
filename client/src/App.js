@@ -13,7 +13,14 @@ class App extends Component {
     super()
 
     this.state = {
-      blogPosts: []
+      blogPosts: [],
+      submitted: false,
+      author: '',
+      description: ''
+      // newPost: {
+      //   author: this.state.author,
+      //   description: this.state.description
+      // }
     }
   }
 
@@ -30,25 +37,60 @@ class App extends Component {
       throw error
     }
   }
-  ///// we are the best team
+
+  publishNewPost = async () => {
+    try {
+      const res = await axios.post(
+        'http://localhost:3001/api/addpost',
+        // this.state.newPost
+        { author: this.state.author, description: this.state.description }
+      )
+      console.log(res)
+      return res.data
+    } catch (error) {
+      throw error
+    }
+  }
+
   ///we stopped here
   addingNewPost = (event) => {
     event.preventDefault()
+    
+    const userName = event.target.name
+    const userPost = event.target.value
+
     this.setState({
-      author: '',
-      description: ''
+      newPost: { author: userName, description: userPost },
+      submitted: true
     })
+    this.publishNewPost()
   }
 
   render() {
+    const newPost = this.state.newPost
+
     return (
       <div className="App">
+        {/* <button
+          type="submit"
+          onClick={this.addingNewPost}
+          className="btn custom-btn"
+        >
+          Publish!
+        </button> */}
         <Nav />
         <Switch>
           <Route
             exact
             path="/"
-            component={(routerProps) => <Form {...routerProps} />}
+            component={(routerProps) => (
+              <Form
+                {...routerProps}
+                name={this.state.author}
+                value={this.state.description}
+                onClick={this.addingNewPost}
+              />
+            )}
           />
           <Route
             path="/allposts"
