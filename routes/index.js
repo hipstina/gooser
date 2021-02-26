@@ -13,4 +13,6 @@ router.delete('/allposts/:id', controllers.deletePost)
 
 router.get('/allposts/:id', controllers.findOnePost)
 
+router.put('/allposts/:id', controllers.updatePost)
+
 module.exports = router
