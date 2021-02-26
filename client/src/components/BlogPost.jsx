@@ -12,11 +12,12 @@ export default class BlogPost extends Component {
     return (
       <div className="post">
         <div className="post-details">
-          <p className="post-author">Author: {author}</p>
-          <p className="post-creation">Published: {created}</p>
+          <p className="post-author">@{author}</p>
+          <br />
+          <p className="post-creation"> {created}</p>
           <ClearPost postId={postId} onClick={onClick} />
         </div>
-
+        <hr />
         <p className="post-description">{description}</p>
       </div>
     )

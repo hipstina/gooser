@@ -5,9 +5,9 @@ export default class Nav extends Component {
   render() {
     return (
       <header>
-        <nav className ="nav">
+        <nav className="nav">
           <NavLink to="/" className="">
-            New Post
+            + New Post
           </NavLink>
 
           <NavLink to="/allposts" className="">
