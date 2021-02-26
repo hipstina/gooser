@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './Form.css'
 import { NavLink } from 'react-router-dom'
+import BASE_URL from './globals'
 
 export default class Form extends Component {
   constructor(props) {
@@ -21,9 +22,9 @@ export default class Form extends Component {
       description: this.state.description
     }
     try {
-      const res = await axios.post('http://localhost:3001/api/addpost', newPost)
+      const res = await axios.post(`${BASE_URL}/api/addpost`, newPost)
       console.log(res.data)
-      const res2 = await axios.get('http://localhost:3001/api/allposts')
+      const res2 = await axios.get(`${BASE_URL}/api/allposts`)
       this.setState({
         blogPosts: res2.data.posts
       })
@@ -62,7 +63,6 @@ export default class Form extends Component {
   render() {
     return (
       <div className=".form-body">
-
         <form className="form" onSubmit={this.handleSubmit}>
           {/* <h1 className="form-title"></h1> */}
           <p className="form-p">Write a quick post to publish on Dashboard.</p>
@@ -88,13 +88,16 @@ export default class Form extends Component {
 
           <button type="submit" className="custom-btn">
             Publish!
-            </button>
+          </button>
 
           {this.state.submitted && (
-            <button className="custom-btn view-post"><NavLink className="view-btn" to="/allposts">View All Posts</NavLink></button>
+            <button className="custom-btn view-post">
+              <NavLink className="view-btn" to="/allposts">
+                View All Posts
+              </NavLink>
+            </button>
           )}
         </form>
-
       </div>
     )
   }

@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import Form from './screens/Form'
 import Dashboard from './screens/Dashboard'
 import { Route, Switch } from 'react-router-dom'
+import BASE_URL from './globals'
 
 // import axios
 import axios from 'axios'
@@ -23,7 +24,7 @@ class App extends Component {
 
   getAllPosts = async () => {
     try {
-      const res = await axios.get('http://localhost:3001/api/allposts')
+      const res = await axios.get(`${BASE_URL}/api/allposts`)
       this.setState({
         allPosts: res.data.posts
       })
