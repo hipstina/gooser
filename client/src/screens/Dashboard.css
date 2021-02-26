@@ -1,17 +1,22 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+
 .post {
   align-items: center;
   display: flex;
   margin: 0 auto;
+  min-height: 150px;
   width: 500px;
-  height: 200px;
-  margin-top: 50px;
-  justify-content: center;
+  height: auto;
+
+  margin: 50px auto;
+  justify-content: flex-start;
   font-family: 'Roboto', sans-serif;
-  font-size: 24px;
+  padding: 30px;
+  font-weight: 400;
   flex-direction: column;
 
   background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.16);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 10px;
@@ -20,9 +25,75 @@
 
 .timeline {
   font-family: 'Roboto', sans-serif;
+  color: rgba(68, 70, 179, 0.9);
 }
 
 .post-body {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.post-details {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  color: rgba(68, 70, 179, 0.9);
+}
+
+.post-author {
+  max-width: 30%;
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-size: 18px;
+  letter-spacing: 0.05rem;
+}
+
+.post-creation {
+  max-width: 40%;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+.post-description {
+  width: 90%;
+  margin: 15px 15px 15px 0;
+  max-height: 420px;
+  overflow-y: scroll;
+  font-size: 20px;
+  line-height: 1.6;
+  color: rgb(42, 45, 78);
+}
+
+.delete-btn {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.delete-btn::after {
+  content: '\f014';
+  font-family: FontAwesome;
+  color: rgba(31, 38, 135, 0.6);
+  font-size: 20px;
+  transition: font-size 150ms ease-in-out;
+}
+
+.delete-btn:hover::after {
+  font-size: 22px;
+  color: rgba(148, 18, 61, 0.6);
+}
+
+hr {
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid rgba(31, 38, 135, 0.1);
 }

@@ -6,9 +6,11 @@ export default class ClearPost extends Component {
     const { postId, onClick } = this.props
     return (
       <div>
-        <button postId={postId} onClick={onClick} className="delete-btn">
-          x
-        </button>
+        <button
+          postId={postId}
+          onClick={onClick}
+          className="delete-btn"
+        ></button>
       </div>
     )
   }
