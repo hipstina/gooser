@@ -61,40 +61,40 @@ export default class Form extends Component {
 
   render() {
     return (
-      <div className= ".form-body">
+      <div className=".form-body">
 
-          <form className="form" onSubmit={this.handleSubmit}>
-          <h1 className="form-title">GO GOOSE!</h1>
-            <p className="form-p">Write a quick post to publish on Dashboard.</p>
+        <form className="form" onSubmit={this.handleSubmit}>
+          {/* <h1 className="form-title"></h1> */}
+          <p className="form-p">Write a quick post to publish on Dashboard.</p>
 
-            <input
-              type="text"
-              placeholder="Your Name"
-              value={this.state.author}
-              onChange={this.handleChange}
-              name="author"
-              className="form-author"
-              />
+          <input
+            type="text"
+            placeholder="Your Name"
+            value={this.state.author}
+            onChange={this.handleChange}
+            name="author"
+            className="form-author"
+          />
 
-            <textarea
-              type="text"
-              placeholder="Write a quick post!"
-              value={this.state.description}
-              onChange={this.handleChange}
-              name="description"
-              maxLength="200"
-              className="form-text"
-              />
+          <textarea
+            type="text"
+            placeholder="Write a quick post!"
+            value={this.state.description}
+            onChange={this.handleChange}
+            name="description"
+            maxLength="200"
+            className="form-text"
+          />
 
-            <button type="submit" className="custom-btn">
-              Publish!
+          <button type="submit" className="custom-btn">
+            Publish!
             </button>
 
-            {this.state.submitted && (
-              <button className="custom-btn view-post"><NavLink className="view-btn" to="/allposts">View All Posts</NavLink></button>
-            )}
-          </form>
-        
+          {this.state.submitted && (
+            <button className="custom-btn view-post"><NavLink className="view-btn" to="/allposts">View All Posts</NavLink></button>
+          )}
+        </form>
+
       </div>
     )
   }

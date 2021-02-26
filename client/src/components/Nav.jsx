@@ -7,7 +7,7 @@ export default class Nav extends Component {
     return (
       <header>
         <nav className="nav">
-          <NavLink to="/" className="">
+          <NavLink to="/" className="nav1">
             + New Post
           </NavLink>
           <NavLink to="/">
@@ -16,7 +16,7 @@ export default class Nav extends Component {
             </div>
           </NavLink>
 
-          <NavLink to="/allposts" className="">
+          <NavLink to="/allposts" className="nav2">
             All Posts
           </NavLink>
         </nav>
