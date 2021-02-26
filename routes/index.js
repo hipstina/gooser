@@ -9,4 +9,6 @@ router.post('/allposts', controllers.createPost)
 
 router.get('/allposts', controllers.findAllPosts)
 
+router.delete('/allposts/:id', controllers.deletePost)
+
 module.exports = router
