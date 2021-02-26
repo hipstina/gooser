@@ -1,11 +1,37 @@
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import Nav from './components/Nav'
+import Form from './components/Form'
+import Dashboard from './components/Dashboard'
+import { Route, Switch } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header"></header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      blogPosts: []
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Nav />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            component={(routerProps) => <Form {...routerProps} />}
+          />
+          <Route
+            path="/allposts"
+            component={(routerProps) => <Dashboard {...routerProps} />}
+          />
+        </Switch>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
