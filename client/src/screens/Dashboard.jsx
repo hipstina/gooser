@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Dashboard.css'
 import BlogPost from '../components/BlogPost'
 import axios from 'axios'
+import { BASE_URL } from '../globals'
 
 export default class Dashboard extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ export default class Dashboard extends Component {
 
   getAllPosts = async () => {
     try {
-      const res = await axios.get('http://localhost:3001/api/allposts')
+      const res = await axios.get(`${BASE_URL}/api/allposts`)
       // console.log(res)
       this.setState({
         allPosts: res.data.posts
@@ -31,11 +32,9 @@ export default class Dashboard extends Component {
     const postId = event.target.attributes.postId.value
 
     try {
-      const res = await axios.delete(
-        `http://localhost:3001/api/allposts/${postId}`
-      )
+      const res = await axios.delete(`${BASE_URL}/api/allposts/${postId}`)
       console.log(res.data)
-      const res2 = await axios.get('http://localhost:3001/api/allposts')
+      const res2 = await axios.get(`${BASE_URL}/api/allposts`)
       this.setState({
         allPosts: res2.data.posts
       })
