@@ -12,6 +12,30 @@ const createPost = async (req, res) => {
   }
 }
 
+const findAllPosts = async (req, res) => {
+  try {
+    const posts = await Post.find()
+    return res.status(200).json({ posts })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const deletePost = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Post.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Post deleted')
+    }
+    throw new Error('Post not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
-  createPost
+  createPost,
+  findAllPosts,
+  deletePost
 }
