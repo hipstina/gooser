@@ -75,13 +75,13 @@ class App extends Component {
 
     return (
       <div className="App">
-        <button
+        {/* <button
           type="submit"
           onClick={this.addingNewPost}
           className="btn custom-btn"
         >
           Publish!
-        </button>
+        </button> */}
         <Nav />
         <Switch>
           <Route

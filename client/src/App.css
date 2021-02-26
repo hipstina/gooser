@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: #e6edf6;
+  /* background-color: red; */
+  margin: 0 auto;
+  padding-top: 50px;
+  overflow: hidden;
+}
+
+.nav {
+  background-color: #e9ecf2;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  overflow: hidden;
+  height: 50px;
+  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  /* margin-left: 3px; */
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}

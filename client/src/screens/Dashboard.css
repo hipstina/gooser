@@ -1,0 +1,26 @@
+.post {
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  width: 500px;
+  height: 200px;
+  box-shadow: 1 1 3px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  flex-direction: column;
+
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.timeline {
+  font-family: 'Roboto', sans-serif;
+}
