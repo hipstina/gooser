@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './Form.css'
 import { NavLink } from 'react-router-dom'
 
 export default class Form extends Component {
@@ -38,6 +39,7 @@ export default class Form extends Component {
     })
 
     console.log('PUBLISHING', this.state)
+    this.updateSubmitted()
   }
 
   handleSubmit = (event) => {
@@ -47,7 +49,6 @@ export default class Form extends Component {
     })
 
     this.publishNewPost()
-    this.updateSubmitted()
   }
 
   updateSubmitted = () => {
@@ -58,31 +59,33 @@ export default class Form extends Component {
 
   render() {
     return (
-      <div>
+      <div className= ".form-body">
+        <h1>Form</h1>
+
+          <form className="form" onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              placeholder="Your Name"
+              value={this.state.author}
+              onChange={this.handleChange}
+              name="author"
+              />
+
+            <textarea
+              type="text"
+              placeholder="Write a quick post!"
+              value={this.state.description}
+              onChange={this.handleChange}
+              name="description"
+              ></textarea>
+            <button type="submit" className="btn custom-btn">
+              Publish!
+            </button>
+          </form>
+        
         {this.state.submitted && (
           <NavLink to="/allposts">View All Posts</NavLink>
         )}
-        <h1>Form</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="Your Name"
-            value={this.state.author}
-            onChange={this.handleChange}
-            name="author"
-          />
-
-          <textarea
-            type="text"
-            placeholder="Write a quick post!"
-            value={this.state.description}
-            onChange={this.handleChange}
-            name="description"
-          ></textarea>
-          <button type="submit" className="btn custom-btn">
-            Publish!
-          </button>
-        </form>
       </div>
     )
   }
