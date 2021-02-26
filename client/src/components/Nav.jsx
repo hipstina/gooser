@@ -5,7 +5,7 @@ export default class Nav extends Component {
   render() {
     return (
       <header>
-        <nav>
+        <nav className ="nav">
           <NavLink to="/" className="">
             New Post
           </NavLink>
