@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
 import Nav from './components/Nav'
-import Form from './components/Form'
-import Dashboard from './components/Dashboard'
+import Form from './screens/Form'
+import Dashboard from './screens/Dashboard'
 import { Route, Switch } from 'react-router-dom'
 
 class App extends Component {
@@ -14,18 +14,14 @@ class App extends Component {
     }
   }
 
-  componentDidMount()
-  
-
-
   ///we stopped here
   addingNewPost = (event) => {
     event.preventDefault()
     this.setState({
-      author: "",
-      description: ""
+      author: '',
+      description: ''
     })
-  } 
+  }
 
   render() {
     return (
