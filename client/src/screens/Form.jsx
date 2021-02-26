@@ -45,7 +45,9 @@ export default class Form extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.setState({
-      submitted: true
+      submitted: true,
+      author: '',
+      description: ''
     })
 
     this.publishNewPost()
@@ -60,15 +62,18 @@ export default class Form extends Component {
   render() {
     return (
       <div className= ".form-body">
-        <h1>Form</h1>
+        <h1>GO GOOSE!</h1>
 
           <form className="form" onSubmit={this.handleSubmit}>
+            <p>Write a quick post to publish on Dashboard.</p>
+
             <input
               type="text"
               placeholder="Your Name"
               value={this.state.author}
               onChange={this.handleChange}
               name="author"
+              className="form-author"
               />
 
             <textarea
@@ -77,15 +82,19 @@ export default class Form extends Component {
               value={this.state.description}
               onChange={this.handleChange}
               name="description"
-              ></textarea>
-            <button type="submit" className="btn custom-btn">
+              maxLength="5"
+              className="form-text"
+              />
+
+            <button type="submit" className="custom-btn">
               Publish!
             </button>
+
+            {this.state.submitted && (
+              <button className="custom-btn view-post"><NavLink to="/allposts">View All Posts</NavLink></button>
+            )}
           </form>
         
-        {this.state.submitted && (
-          <NavLink to="/allposts">View All Posts</NavLink>
-        )}
       </div>
     )
   }
