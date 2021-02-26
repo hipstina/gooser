@@ -34,8 +34,19 @@ const deletePost = async (req, res) => {
   }
 }
 
+const findOnePost = async (req, res) => {
+  try {
+    const { id } = req.params
+    const post = await Post.findById(id)
+    return res.status(200).json({ post })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   createPost,
   findAllPosts,
-  deletePost
+  deletePost,
+  findOnePost
 }
