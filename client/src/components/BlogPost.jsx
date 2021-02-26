@@ -3,7 +3,7 @@ import ClearPost from './ClearPost'
 
 export default class BlogPost extends Component {
   render() {
-    const { author, description, createdAt, postId } = this.props
+    const { author, description, createdAt, postId, onClick } = this.props
 
     const timestamp = createdAt
     const date = new Date(timestamp)
@@ -14,7 +14,7 @@ export default class BlogPost extends Component {
         <div className="post-details">
           <p className="post-author">Author: {author}</p>
           <p className="post-creation">Published: {created}</p>
-          <ClearPost postId={postId} />
+          <ClearPost postId={postId} onClick={onClick} />
         </div>
 
         <p className="post-description">{description}</p>

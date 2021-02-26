@@ -27,6 +27,24 @@ export default class Dashboard extends Component {
     }
   }
 
+  deletePost = async (event) => {
+    const postId = event.target.attributes.postId.value
+
+    try {
+      const res = await axios.delete(
+        `http://localhost:3001/api/allposts/${postId}`
+      )
+      console.log(res.data)
+      const res2 = await axios.get('http://localhost:3001/api/allposts')
+      this.setState({
+        allPosts: res2.data.posts
+      })
+      return res2.data
+    } catch (error) {
+      throw error
+    }
+  }
+
   render() {
     const allPosts = this.state.allPosts.reverse()
     return (
@@ -40,6 +58,7 @@ export default class Dashboard extends Component {
               description={result.description}
               createdAt={result.createdAt}
               postId={result._id}
+              onClick={this.deletePost}
             />
           ))}
         </div>
