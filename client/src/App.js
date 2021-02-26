@@ -30,7 +30,7 @@ class App extends Component {
       throw error
     }
   }
-
+  ///// we are the best team
   ///we stopped here
   addingNewPost = (event) => {
     event.preventDefault()
