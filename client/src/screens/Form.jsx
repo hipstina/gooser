@@ -62,10 +62,10 @@ export default class Form extends Component {
   render() {
     return (
       <div className= ".form-body">
-        <h1>GO GOOSE!</h1>
 
           <form className="form" onSubmit={this.handleSubmit}>
-            <p>Write a quick post to publish on Dashboard.</p>
+          <h1 className="form-title">GO GOOSE!</h1>
+            <p className="form-p">Write a quick post to publish on Dashboard.</p>
 
             <input
               type="text"
@@ -82,7 +82,7 @@ export default class Form extends Component {
               value={this.state.description}
               onChange={this.handleChange}
               name="description"
-              maxLength="5"
+              maxLength="200"
               className="form-text"
               />
 
@@ -91,7 +91,7 @@ export default class Form extends Component {
             </button>
 
             {this.state.submitted && (
-              <button className="custom-btn view-post"><NavLink to="/allposts">View All Posts</NavLink></button>
+              <button className="custom-btn view-post"><NavLink className="view-btn" to="/allposts">View All Posts</NavLink></button>
             )}
           </form>
         
