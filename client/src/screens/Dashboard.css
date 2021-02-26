@@ -1,0 +1,28 @@
+.post {
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  width: 500px;
+  height: 200px;
+  margin-top: 50px;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  flex-direction: column;
+
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.timeline {
+  font-family: 'Roboto', sans-serif;
+}
+
+.post-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
