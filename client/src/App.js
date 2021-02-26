@@ -4,7 +4,7 @@ import Nav from './components/Nav'
 import Form from './screens/Form'
 import Dashboard from './screens/Dashboard'
 import { Route, Switch } from 'react-router-dom'
-import BASE_URL from './globals'
+import { BASE_URL } from './globals'
 
 // import axios
 import axios from 'axios'

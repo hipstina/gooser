@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './Form.css'
 import { NavLink } from 'react-router-dom'
-import BASE_URL from '../globals'
+import { BASE_URL } from '../globals'
 
 export default class Form extends Component {
   constructor(props) {
