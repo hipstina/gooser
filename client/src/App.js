@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import './App.css';
-
-
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
-=======
 import React, { Component } from 'react'
 import './App.css'
 import Nav from './components/Nav'
@@ -42,7 +32,6 @@ class App extends Component {
       </div>
     )
   }
->>>>>>> 9835eeb440b0cb07f1ffdd3b3dae181e784b8ae8
 }
 
 export default App

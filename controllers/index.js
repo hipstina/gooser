@@ -2,7 +2,7 @@ const Post = require('../models/blog-post')
 
 const createPost = async (req,res) =>{
   try{
-  const post = await new blogPost(req.body)
+  const post = await Post.create(req.body)
   await post.save()
   return res.status(201).json({post})
 
@@ -18,15 +18,25 @@ const findAllPosts = async (req,res) =>{
   } catch (error) {
     return res.status(500).send(error.message)
   }
+}
 
-
-
-
+const deletePost = async (req,res) =>{
+  try {
+    const { id } = req.params;
+    const deleted = await Post.findByIdAndDelete(id)
+    if (deleted) {
+        return res.status(200).send("Post deleted");
+    }
+    throw new Error("Post not found");
+} catch (error) {
+    return res.status(500).send(error.message);
+}
 }
 
 
-
 module.exports = {
-  createPost
+  createPost,
+  findAllPosts,
+  deletePost
 }
 
