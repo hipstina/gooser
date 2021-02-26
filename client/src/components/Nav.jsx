@@ -10,7 +10,7 @@ export default class Nav extends Component {
             New Post
           </NavLink>
 
-          <NavLink to="/posts" className="">
+          <NavLink to="/allposts" className="">
             All Posts
           </NavLink>
         </nav>

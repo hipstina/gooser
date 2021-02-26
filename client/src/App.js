@@ -25,7 +25,7 @@ class App extends Component {
             component={(routerProps) => <Form {...routerProps} />}
           />
           <Route
-            path="/posts"
+            path="/allposts"
             component={(routerProps) => <Dashboard {...routerProps} />}
           />
         </Switch>
