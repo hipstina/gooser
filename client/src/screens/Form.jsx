@@ -6,6 +6,7 @@ export default class Form extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      allPosts: [],
       blogPosts: props.posts,
       submitted: false,
       author: '',
@@ -31,7 +32,6 @@ export default class Form extends Component {
     }
   }
 
-  ///we stopped here
   handleChange = ({ target }) => {
     this.setState({
       [target.name]: target.value
